@@ -1,0 +1,13 @@
+<div class="form-floating">
+    <input
+            id="aliasInput"
+            type="text"
+            class="form-control"
+            placeholder="Mailbox alias"
+            {% if random_word %}
+                value="{{ random_word }}"
+            {% endif %}
+            aria-label="Mailbox alias"
+            aria-describedby="button-random-alias">
+    <label for="aliasInput">Mailbox alias</label>
+</div>

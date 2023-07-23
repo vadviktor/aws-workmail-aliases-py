@@ -1,0 +1,28 @@
+<table class="table table-striped pb-5">
+    <tbody>
+    {% for alias in aliases|sort %}
+        {% set alias_parts = alias.split("@") %}
+        <tr>
+            <td>
+                <button class="btn btn-dark text-nowrap"
+                        type="button"
+                        x-on:click="copyToClipboard"
+                        id="clipboard-{{ alias_parts[0] }}-{{ alias_parts[1] }}">
+                    <i class="bi bi-clipboard"></i>
+                    <span class="d-none d-sm-none d-md-none d-lg-inline">Copy to clipboard</span>
+                </button>
+                <div class="d-none" id="clipboard-{{ alias_parts[0] }}-{{ alias_parts[1] }}-text">{{ alias }}</div>
+            </td>
+            <td class="text-break">
+                {{ alias_parts[0] }}<strong>@{{ alias_parts[1] }}</strong>
+            </td>
+            <td>
+                <button class="btn btn-danger text-nowrap" type="button">
+                    <i class="bi-trash"></i>
+                    <span class="d-none d-sm-none d-md-none d-lg-inline">Delete</span>
+                </button>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,23 @@
+<form method="post" class="pb-3">
+    {% include 'alias_input.html.jinja2' %}
+
+    <div class="row mt-3 ">
+        <div class="col-auto me-auto">
+            <select id="domainSelect" class="form-select">
+                <option selected value="">-- Select a domain --</option>
+                {% for domain in domains %}
+                    <option value="{{ domain }}">{{ domain }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="col">
+            <button class="btn btn-primary"
+                    type="button"
+                    disabled="disabled" {# TODO disable when alias is empty #}
+                    {# TODO onclick #}>
+                Create
+            </button>
+        </div>
+    </div>
+</form>
