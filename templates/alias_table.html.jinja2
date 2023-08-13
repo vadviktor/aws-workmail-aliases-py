@@ -17,10 +17,35 @@
                 {{ alias_parts[0] }}<strong>@{{ alias_parts[1] }}</strong>
             </td>
             <td>
-                <button class="btn btn-danger text-nowrap" type="button">
-                    <i class="bi-trash"></i>
-                    <span class="d-none d-sm-none d-md-none d-lg-inline">Delete</span>
-                </button>
+                <div class="d-flex" x-data="{ open: false }">
+
+                    <div x-show="!open">
+                        <button type="button"
+                                x-on:click="open = !open"
+                                class="btn btn-danger text-nowrap">
+                            <i class="bi bi-trash"></i>
+                            <span class="d-none d-sm-none d-md-none d-lg-inline">Delete</span>
+                        </button>
+                    </div>
+
+                    <div x-show="open" x-cloak>
+                        <div class="d-flex">
+                            <button type="button"
+                                    x-on:click="open = !open"
+                                    class="btn btn-primary me-3">
+                                <i class="bi bi-x-lg"></i> No
+                            </button>
+
+                            <form action="/alias/delete" method="post">
+                                <input type="hidden" name="alias" value="{{ alias }}">
+                                <button type="submit" class="btn btn-danger me-3">
+                                    <i class="bi bi-trash"></i> Yes
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
             </td>
         </tr>
     {% endfor %}

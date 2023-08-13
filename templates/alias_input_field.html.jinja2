@@ -1,9 +1,11 @@
 <div class="form-floating">
     <input
             id="aliasInput"
+            name="mailbox"
             type="text"
             class="form-control"
             placeholder="Mailbox alias"
+            required
             {% if random_word %}
                 value="{{ random_word }}"
             {% endif %}

@@ -1,7 +1,7 @@
 let copyToClipboard = (e) => {
     let currentTarget = e.currentTarget;
     navigator.permissions.query({name: "clipboard-write"}).then(result => {
-        if (result.state == "granted" || result.state == "prompt") {
+        if (result.state === "granted" || result.state === "prompt") {
             // Clipboard access is granted. Use it to write to the clipboard
             const text = document.getElementById(`${currentTarget.id}-text`).innerText;
             try {
