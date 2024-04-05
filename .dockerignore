@@ -1,8 +1,5 @@
 .git
-.idea
 .ruff_cache
 .vscode
 vendor
 venv
-*.iml
-.env*
