@@ -1,17 +1,19 @@
 from os import environ
 
-from flask import Flask, render_template, request, redirect, url_for, flash
+from dotenv import load_dotenv
+from flask import Flask, flash, redirect, render_template, request, url_for
 
 from lib.aws import (
+    create_workmail_alias,
+    delete_workmail_alias,
     get_workmail_aliases,
     get_workmail_domains,
-    delete_workmail_alias,
-    create_workmail_alias,
 )
 from lib.random_word import random_word as generate_random_word
 
 app = Flask(__name__)
 app.secret_key = environ.get("FLASK_SECRET_KEY")
+load_dotenv()
 
 
 @app.route("/")
