@@ -11,9 +11,9 @@ from lib.aws import (
 )
 from lib.random_word import random_word as generate_random_word
 
+load_dotenv()
 app = Flask(__name__)
 app.secret_key = environ.get("FLASK_SECRET_KEY")
-load_dotenv()
 
 
 @app.route("/")
