@@ -3,3 +3,6 @@
 .vscode
 vendor
 venv
+.venv
+sample.env
+requirements.development.txt

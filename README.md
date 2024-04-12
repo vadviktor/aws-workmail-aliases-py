@@ -3,14 +3,14 @@
 Build
 
 ```shell
-docker -H "ssh://rpi@192.168.1.222" build -t vadviktor.xyz/aws-workmail-aliases:1.0.0 -f Dockerfile .
+docker -H "ssh://rpi@192.168.1.242" build -t vadviktor.xyz/aws-workmail-aliases:1.0.0 -f Dockerfile .
 ```
 
 Run
 
 ```shell
 docker \
-  -H "ssh://rpi@192.168.1.222" \
+  -H "ssh://rpi@192.168.1.242" \
   run \
   --detach \
   --name aws-workmail-aliases \
