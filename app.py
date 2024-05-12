@@ -36,7 +36,7 @@ def random_word():
 
 @app.post("/alias/delete")
 def delete_alias():
-    alias = request.form.get("alias")
+    alias = request.form.get("alias", "")
     try:
         delete_workmail_alias(alias)
         flash(f"Alias {alias} deleted", "success")
